@@ -2,7 +2,7 @@
   <div id="app">
     <header class="app-header">
       <div class="container">
-        <a class="github-icon" href="https://github.com/"></a>
+        <a class="github-icon" href="https://github.com/" target="_blank"></a>
         <span class="header-title">Github repository browsing tool</span>
       </div>
     </header>
@@ -10,8 +10,8 @@
       <router-view/>
     </div>
     <footer class="app-footer">
-      Created by &nbsp;  <a href="https://github.com/langald" class="app-link">Larissa Angald</a>, 
-      source code &nbsp;  <a href="https://github.com/langald/Browsing-repos" class="app-link">link</a>
+      Created by &nbsp;  <a href="https://github.com/langald" class="app-link" target="_blank">Larissa Angald</a>, 
+      source code &nbsp;  <a href="https://github.com/langald/Browsing-repos" class="app-link" target="_blank">link</a>
     </footer>
   </div>
 </template>

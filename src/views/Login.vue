@@ -4,6 +4,8 @@
       <div v-if="loading">Loading...</div>
       <div v-else>Sign in with GitHub <i class="login-icon"></i></div>
     </button>
+
+    <div class="error" v-if="error">{{ error }}</div>
   </div>
 </template>
 
@@ -14,13 +16,15 @@ import { mapActions } from 'vuex'
 export default {
   data() {
     return {
-      loading: false
+      loading: false,
+      error: ''
     }
   },
   methods: {
     ...mapActions(['setAuth', 'setUser', 'setRepos']),
     login() {
       this.loading = true
+      this.error = ''
 
       OAuth.initialize('iKkw0c-dbam7dKKAWMSmFI9EG74');
 
@@ -48,7 +52,12 @@ export default {
 
         Promise.all(promises)
           .then(() => this.$router.push({name: 'home'}))
-      });
+      })
+        .fail(e => {
+          console.log(e.message)
+          this.error = e.message
+          this.loading = false
+        })
     }
   }
 
