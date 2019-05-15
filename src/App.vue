@@ -1,28 +1,22 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <header class="app-header">
+      <div class="container">
+        <a class="github-icon" href="https://github.com/"></a>
+        <span class="header-title">Github repository browsing tool</span>
+      </div>
+    </header>
+    <div class="app-content">
+      <router-view/>
+    </div>
+    <footer class="app-footer">
+      Created by &nbsp;  <a href="https://github.com/langald" class="app-link">Larissa Angald</a>, 
+      source code &nbsp;  <a href="https://github.com/langald/Browsing-repos" class="app-link">link</a>
+    </footer>
   </div>
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
 
-export default {
-  name: 'app',
-  components: {
-    HelloWorld
-  }
-}
-</script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="sass">
+  @import "@/assets/css/app.sass"
 </style>
